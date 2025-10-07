@@ -8,7 +8,7 @@ RUN mvn dependency:go-offline -q
 
 # copia código e faz o build
 COPY src ./src
-RUN mvn clean package -DskipTests -q
+RUN mvn clean package spring-boot:repackage -DskipTests -q
 
 # Etapa 2: imagem final
 FROM eclipse-temurin:17-jre-alpine
